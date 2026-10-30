@@ -8,7 +8,7 @@ Trivia Nusantara: An Indonesian Culture Quiz
 
 **Project link**
 
-Paste your public Netlify URL here. A local address such as `http://localhost:8888` is only available on your computer and cannot be submitted as a public game link.
+https://trivia-nusantara-taqinpedia3.netlify.app
 
 **Description (437/500 characters)**
 
