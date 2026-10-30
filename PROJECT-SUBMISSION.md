@@ -8,7 +8,7 @@ Trivia Nusantara: An Indonesian Culture Quiz
 
 **Project link**
 
-Paste the public URL from your hosting provider here. `http://localhost:3000` is only available on your computer and cannot be submitted as a public game link.
+Paste your public Netlify URL here. A local address such as `http://localhost:8888` is only available on your computer and cannot be submitted as a public game link.
 
 **Description (437/500 characters)**
 

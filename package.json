@@ -2,14 +2,16 @@
   "name": "trivia-nusantara",
   "version": "1.0.0",
   "private": true,
-  "description": "Game kuis multiplayer Trivia Nusantara",
-  "main": "server.js",
+  "description": "A real-time multiplayer quiz celebrating Indonesian culture",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "netlify dev --offline",
+    "dev": "netlify dev --offline",
+    "deploy": "netlify deploy --prod"
   },
   "dependencies": {
-    "express": "^5.1.0",
-    "socket.io": "^4.8.1"
+    "@netlify/blobs": "^11.1.7"
+  },
+  "devDependencies": {
+    "netlify-cli": "^27.16.1"
   }
 }
