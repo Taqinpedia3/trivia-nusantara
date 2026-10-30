@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#29271f" />
+  <title>Trivia Nusantara — An Indonesian Culture Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="grain"></div>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="/"><span class="brand-mark">✳</span><span>Nusa<span class="brand-accent">Play</span></span></a>
+      <span class="top-note"><i class="live-dot"></i> PLAY TOGETHER. DISCOVER INDONESIA.</span>
+      <span class="top-chip">🇮🇩 Indonesia, in play</span>
+    </header>
+
+    <section id="landing" class="landing">
+      <div class="hero-copy">
+        <p class="eyebrow"><span>✺</span> A PARTY QUIZ ROOTED IN INDONESIA</p>
+        <h1>Taste, travel &<br /><em>tradition.</em></h1>
+        <p class="hero-desc">From beloved regional dishes to island landmarks and living traditions—race your friends, learn something new, and celebrate Indonesia together.</p>
+        <div class="feature-row"><span>◷ About 10 min</span><span>♙ 1–8 players</span><span>✳ 10 questions</span></div>
+        <div class="culture-art"><img src="/nusantara-art.svg" alt="Illustration inspired by an Indonesian temple, volcanic islands, ocean waves, and batik patterns" /><span>ONE ARCHIPELAGO. A THOUSAND STORIES.</span></div>
+        <div class="culture-strip"><span class="strip-stamp">✺</span><div><b>THREE WAYS TO EXPLORE</b><span>Food <i>•</i> Travel <i>•</i> Culture</span></div><span class="strip-islands">SUMATRA&nbsp; · &nbsp;JAVA&nbsp; · &nbsp;BEYOND</span></div>
+      </div>
+      <div class="entry-card">
+        <div class="card-tabs"><button class="tab active" data-tab="create">Create a room</button><button class="tab" data-tab="join">Join a room</button></div>
+        <form id="room-form">
+          <label for="player-name">YOUR NAME</label>
+          <input id="player-name" maxlength="18" placeholder="e.g. Maya" autocomplete="nickname" required />
+          <div id="code-field" class="hidden"><label for="room-code">ROOM CODE</label><input id="room-code" maxlength="5" placeholder="ABCDE" autocomplete="off" /></div>
+          <button id="room-submit" class="primary-btn" type="submit">Create a room <span>↗</span></button>
+          <p id="form-error" class="error-msg" role="alert"></p>
+        </form>
+        <div class="card-foot"><span>✦</span> No account needed. Play from any phone or laptop.</div>
+      </div>
+      <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+    </section>
+
+    <section id="game" class="game hidden">
+      <div class="game-head"><div><p class="eyebrow">TRIVIA NUSANTARA</p><h2 id="phase-title">Waiting room</h2></div><div class="room-badge"><span>ROOM CODE</span><strong id="room-code-display">—</strong><button id="copy-code" aria-label="Copy room code">Copy</button></div></div>
+      <div id="lobby-panel" class="lobby-layout">
+        <div class="lobby-main"><div class="waiting-art"><div class="sun">✺</div><div class="island island-a"></div><div class="island island-b"></div><div class="wave wave-a"></div><div class="wave wave-b"></div><span class="art-label">THE ISLANDS<br />ARE CALLING</span></div><h3 id="lobby-message">Your room is ready!</h3><p class="muted">Share the code with friends, or start a solo adventure.</p><button id="start-game" class="primary-btn">Start game <span>→</span></button><p id="start-hint" class="hint">Ready when you are. Solo play is welcome.</p></div>
+        <aside class="players-panel"><div class="panel-title"><h3>Players</h3><span id="player-count" class="count-pill">1 / 8</span></div><ul id="player-list" class="player-list"></ul></aside>
+      </div>
+      <div id="question-panel" class="question-panel hidden">
+        <div class="round-meta"><span id="question-category" class="category-pill">FOOD</span><span id="round-label">QUESTION 1 / 10</span><span id="timer" class="timer">15</span></div>
+        <div class="progress-track"><div id="progress" class="progress-fill"></div></div>
+        <h3 id="question-text" class="question-text"></h3>
+        <div id="answer-list" class="answer-grid"></div>
+        <p id="answer-status" class="answer-status">Choose your answer. Your choice stays hidden until the round ends.</p>
+        <div class="live-players"><span class="live-dot"></span><span id="answered-count">0</span><span>players have answered</span></div>
+      </div>
+      <div id="reveal-panel" class="reveal-panel hidden"><div class="reveal-head"><span class="category-pill">ROUND REVEAL</span><span id="reveal-round" class="muted"></span></div><div class="correct-card"><span class="correct-icon">✓</span><div><p>THE CORRECT ANSWER</p><h3 id="correct-answer"></h3></div></div><p id="answer-note" class="answer-note"></p><div class="scoreboard"><div class="panel-title"><h3>Leaderboard</h3><span class="muted">Current standings</span></div><ol id="score-list" class="score-list"></ol></div></div>
+      <div id="finished-panel" class="finished-panel hidden"><div class="winner-burst">✹</div><p class="eyebrow">GAME COMPLETE</p><h2 id="winner-title">Nusantara champion!</h2><p id="winner-subtitle" class="muted"></p><div class="scoreboard"><div class="panel-title"><h3>Final results</h3><span class="muted">10 rounds played</span></div><ol id="final-score-list" class="score-list"></ol></div><button id="play-again" class="secondary-btn">Back to home</button></div>
+      <div id="toast" class="toast hidden" role="status"></div>
+    </section>
+    <footer><span>TRIVIA NUSANTARA</span><span>MADE FOR FRIENDS, FAMILY & THE LOVE OF DISCOVERY ✦</span></footer>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/client.js"></script>
+</body>
+</html>
